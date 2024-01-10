@@ -9,16 +9,16 @@ export const metadata: Metadata = {
 
 export default async function NotesPage() {
 
-    const { userId } = auth();
+    const { userId } = await auth();
 
     if (!userId) throw Error("Not Authenticated");
 
-    const allNotes = await prisma.note.findMany({ where: { usesId: userId } });
+    // const allNotes = await prisma.note.findMany({ where: { usesId: userId } });
 
 
     return (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 ">
-            {allNotes.map((note) => (
+            {/* {allNotes.map((note) => (
                 <Note note={note} key={note.id} />
                 ))}
 
@@ -26,7 +26,7 @@ export default async function NotesPage() {
                 <div className="col-span-full text-center font-semibold text-2xl ">
                     {"You don't have any notes yet. Click on the add note button to add a note."}
                 </div>
-                )}
+                )} */}
         </div>
     )
 }
