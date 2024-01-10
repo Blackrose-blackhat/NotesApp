@@ -2,13 +2,13 @@ import Image from "next/image";
 import logo from "@/assests/logo.jpg"
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { auth } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
-export default function Home() {
-  const{userId}= auth();
+export default async function Home() {
+  const user= await currentUser();
 
-  if (userId) redirect("/notes");
+  if (user) redirect("/notes");
  
 
 
