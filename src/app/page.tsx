@@ -1,20 +1,14 @@
-"use client"
-
-import { auth } from "@clerk/nextjs";
 import Image from "next/image";
 import logo from "@/assests/logo.jpg"
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import { useEffect } from "react";
 
-export default async function Home() {
+export default function Home() {
+  const{userId}= auth();
 
-  const{userId}=  auth();
-
-  useEffect(() => {
-    if (userId) redirect("/notes");
-  }, [userId]);
+  if (userId) redirect("/notes");
 
   return (
     <main className="flex flex-col h-screen items-center justify-center gap-5">
