@@ -18,8 +18,8 @@ export default function NavBar() {
 
     return (
         <>
-        <div className="p-4 shadow flex w-full items-center justify-center ">
-    <div className="max-w-full flex items-center justify-between">
+        <div className="p-4 shadow  ">
+    <div className=" m-auto  flex max-w-7xl flex-wrap items-center justify-between">
         <div className="flex items-center gap-1">
             <Link href="/notes" className="flex items-center gap-1">
                 <Image src={logo} alt="NotesApp Logo" width={40} height={40} />
@@ -28,7 +28,7 @@ export default function NavBar() {
         </div>
     
 
-        <div className="flex items-center gap-2 justify-end flex-grow">
+        <div className="flex items-end gap-2 justify-end flex-grow">
             <div className="flex items-center gap-2 justify-end">
                 <UserButton
                     afterSignOutUrl="/"
