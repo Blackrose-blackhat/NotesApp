@@ -9,6 +9,8 @@ export default function Home() {
   const{userId}= auth();
 
   if (userId) redirect("/notes");
+  else
+    redirect("/sign-in")
 
   return (
     <main className="flex flex-col h-screen items-center justify-center gap-5">
