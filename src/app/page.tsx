@@ -21,7 +21,7 @@ export default function Home() {
         Pinecone, Next.js, Clerk and more.
       </p>
       <Button size="lg" asChild>
-        <Link href="/notes">Open</Link>
+        <Link href="/sign-in">Open</Link>
         </Button>
     </main>
   )
